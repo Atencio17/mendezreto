@@ -1,0 +1,17 @@
+services:
+  carrito:
+    build: ./carrito
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      DB_HOST: host.docker.internal 
+      DB_PORT: 3306  
+    depends_on:
+      - listar-productos
+
+  listar-productos:
+    build: ./listar-productos
+    ports:
+      - "80:80"

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center my-4">Registrarse</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Usuario</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            class="form-control" 
+            placeholder="Elige tu usuario" 
+            required 
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-control" 
+            placeholder="Tu email" 
+            required 
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-control" 
+            placeholder="Crea una contraseña" 
+            required 
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password2" class="form-label">Confirmar Contraseña</label>
+          <input 
+            type="password" 
+            id="password2" 
+            name="password2" 
+            class="form-control" 
+            placeholder="Repite la contraseña" 
+            required 
+          />
+        </div>
+        <button type="button" class="btn btn-success w-100">Crear cuenta</button>
+      </form>
+
+      <div class="mt-3 text-center">
+        <a href="login.html">Volver al Login</a><br/>
+        <a href="home.html">Ir al Home (demo)</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5.3 JS (Bundle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
