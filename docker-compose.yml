@@ -1,17 +1,43 @@
 services:
+
+  db:
+    container_name: bdservice
+    image: mysql:9.2.0
+    restart: always
+    volumes:
+      - reto-distribuidos:/data/db
+    enviroment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+
+  listar-productos:
+    depends_on:
+      - db
+    build: ./listar-productos
+    ports:
+      - "80:80"
+    environment:
+      - DB_HOST: db
+      - DB_USER: root
+      - DB_PASS: root_password
+      - DB_NAME: mydb
+
   carrito:
+    depends_on:
+      - db
     build: ./carrito
     ports:
       - "3000:3000"
     env_file:
       - .env
     environment:
-      DB_HOST: host.docker.internal 
-      DB_PORT: 3306  
-    depends_on:
-      - listar-productos
-
-  listar-productos:
-    build: ./listar-productos
-    ports:
-      - "80:80"
+      DB_HOST: host.docker.internal
+      DB_USER: root
+      DB_PASSWORD: 
+      DB_NAME: mydb
+      DB_PORT: 3306
+      DB_CONNECTION_LIMIT: 10
+      SESSION_SECRET: CecarTeAmoMucho
+ volumes:
+    reto-distribuidos:
+      external: false
